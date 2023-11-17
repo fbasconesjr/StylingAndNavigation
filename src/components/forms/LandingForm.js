@@ -2,9 +2,9 @@ import { Text, View } from 'react-native'
 import { PaperProvider, Button } from 'react-native-paper';
 import * as React from 'react';
 
-const Content = () => {
+export default function LandingForm(props) {
   return (
-    <PaperProvider>
+    <View>
     <Button style={{
           justifyContent: 'flex-end',
           borderWidth: 1,
@@ -16,18 +16,16 @@ const Content = () => {
           justifyContent: 'flex-end',
           backgroundColor: "#00491E",
           
-        }}mode="contained" onPress={() => console.log('Pressed')}>
-    Login
+        }}mode="contained" onPress={() => props.navigation.navigate("LoginPage")}>
+    LOGIN
   </Button>
   <Button style={{
           color: "#00491E",
           textColor: "#00491E",
           borderWidth: 2,
-        }}mode="outlined" onPress={() => console.log('Pressed')}>
-    <Text style={{color:"#00491E"}}>Sign Up</Text>
+        }}mode="outlined" onPress={() => props.navigation.navigate("SignUpPage")}>
+    <Text style={{color:"#00491E"}}>SIGN UP</Text>
   </Button>
-  </PaperProvider>
+  </View>
   )
 }
-
-export default Content
